@@ -13,7 +13,10 @@ function playSound(e) {
 addEventListener("click", playSoundClick);
 
 function playSoundClick(e) {
-    const valueClick = e.target.lastElementChild.textContent.toLowerCase();//obtengo el nombre de la tecla
+    e.preventDefault();
+    const valueClick = e.target.parentElement.lastElementChild.textContent.toLowerCase();//obtengo el nombre de la tecla
+    console.log(valueClick)
     const soundToPlay = document.querySelector(`[src="./assets/sounds/${valueClick}.wav"]`) //lo llamo desde el html
     soundToPlay.play(); //lo ejecuto
+
 }
